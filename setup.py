@@ -16,6 +16,8 @@ REQUIRED = [
     # Required package dependencies.
     'Babel',
     'Django',
+    'django-phonenumber-field',
+    'phonenumbers',
     'pytz',
 ]
 
