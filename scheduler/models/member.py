@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -27,13 +27,9 @@ class Role(base.Model):
         return self.name
 
 
-class Member(base.Model):
-    user = models.OneToOneField(
-        on_delete=models.CASCADE,
-        to=User,
-    )
+class User(AbstractUser):
     phone_number = PhoneNumberField(blank=True)
     roles = models.ManyToManyField(to=Role)
 
     def __str__(self):
-        return self.user.get_full_name() or self.user.username
+        return self.get_full_name() or self.username

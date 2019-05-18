@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from scheduler.models import Event, EventCategory, Role, RoleCategory, Member, Position
+from scheduler.models import Event, EventCategory, Role, RoleCategory, Position, User
 
 admin.site.register(Event)
 admin.site.register(EventCategory)
-admin.site.register(Member)
 admin.site.register(Position)
 admin.site.register(Role)
 admin.site.register(RoleCategory)
+admin.site.register(User)

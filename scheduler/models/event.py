@@ -3,7 +3,7 @@ from enum import Enum
 from django.db import models
 
 from scheduler.models import base
-from scheduler.models.member import Role, Member
+from scheduler.models.member import Role, User
 
 
 class EventCategory(base.Category):
@@ -44,11 +44,11 @@ class Position(base.Model):
         on_delete=models.CASCADE,
         to=Role,
     )
-    member = models.ForeignKey(
+    user = models.ForeignKey(
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
-        to=Member,
+        to=User,
     )
     status = models.CharField(
         blank=True,
