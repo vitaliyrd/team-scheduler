@@ -8,6 +8,12 @@ class Model(models.Model):
     class Meta:
         abstract = True
 
+    id = models.AutoField(
+        auto_created=True,
+        primary_key=True,
+        serialize=False,
+        verbose_name='ID',
+    )
     created = models.DateTimeField(auto_now_add=True)
     # TODO: Created by field
     updated = models.DateTimeField(auto_now=True)
