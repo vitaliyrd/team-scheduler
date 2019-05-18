@@ -9,7 +9,9 @@ class Model(models.Model):
         abstract = True
 
     created = models.DateTimeField(auto_now_add=True)
+    # TODO: Created by field
     updated = models.DateTimeField(auto_now=True)
+    # TODO: Updated by field
 
 
 class Category(Model):
