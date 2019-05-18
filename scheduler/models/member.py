@@ -30,6 +30,8 @@ class Role(base.Model):
 class User(AbstractUser):
     phone_number = PhoneNumberField(blank=True)
     roles = models.ManyToManyField(to=Role)
+    updated = models.DateTimeField(auto_now=True)
+    # TODO: Updated by field
 
     def __str__(self):
         return self.get_full_name() or self.username
